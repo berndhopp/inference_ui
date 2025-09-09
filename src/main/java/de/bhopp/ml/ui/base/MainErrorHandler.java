@@ -1,4 +1,4 @@
-package com.example.application.base.ui;
+package de.bhopp.ml.ui.base;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.notification.Notification;
@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@SuppressWarnings("unused")
 class MainErrorHandler {
 
     private static final Logger log = LoggerFactory.getLogger(MainErrorHandler.class);

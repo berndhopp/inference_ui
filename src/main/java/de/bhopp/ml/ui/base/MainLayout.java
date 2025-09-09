@@ -1,4 +1,4 @@
-package com.example.application.base.ui;
+package de.bhopp.ml.ui.base;
 
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.html.Div;
@@ -15,6 +15,7 @@ import com.vaadin.flow.server.menu.MenuEntry;
 import static com.vaadin.flow.theme.lumo.LumoUtility.*;
 
 @Layout
+@SuppressWarnings("unused")
 public final class MainLayout extends AppLayout {
 
     MainLayout() {
@@ -23,12 +24,11 @@ public final class MainLayout extends AppLayout {
     }
 
     private Div createHeader() {
-        // TODO Replace with real application logo and name
-        var appLogo = VaadinIcon.CUBES.create();
+        var appLogo = VaadinIcon.CONNECT_O.create();
         appLogo.addClassNames(TextColor.PRIMARY, IconSize.LARGE);
 
-        var appName = new Span("Temp Calculator");
-        appName.addClassNames(FontWeight.SEMIBOLD, FontSize.LARGE);
+        var appName = new Span("My First Inference UI");
+        appName.addClassNames(FontWeight.SEMIBOLD, FontSize.MEDIUM);
 
         var header = new Div(appLogo, appName);
         header.addClassNames(Display.FLEX, Padding.MEDIUM, Gap.MEDIUM, AlignItems.CENTER);

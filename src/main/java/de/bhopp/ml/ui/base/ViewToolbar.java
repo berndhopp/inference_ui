@@ -1,4 +1,4 @@
-package com.example.application.base.ui.component;
+package de.bhopp.ml.ui.base;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Composite;
@@ -11,6 +11,7 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 @NullMarked
+@SuppressWarnings("unused")
 public final class ViewToolbar extends Composite<Header> {
 
     public ViewToolbar(@Nullable String viewTitle, Component... components) {
