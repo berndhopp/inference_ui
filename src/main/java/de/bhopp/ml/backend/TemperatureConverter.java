@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import inference.GRPCInferenceServiceGrpc;
-import inference.GrpcService;
+import inference.GrpcService.ModelInferRequest;
 
 @Component
 @Scope("singleton")
@@ -18,28 +18,14 @@ public class TemperatureConverter {
     }
 
     public double convertToFahrenheit(float celsius) {
-        final var inferTensorContents =
-                GrpcService.InferTensorContents.newBuilder().addFp32Contents(celsius).build();
-
-        final var inferInputTensor =
-                GrpcService.ModelInferRequest.InferInputTensor.newBuilder()
-                        .setName("input__0")
-                        .addShape(1)
-                        .setDatatype("FP32")
-                        .setContents(inferTensorContents)
-                        .build();
-
-        final var outputTensorSpec =
-                GrpcService.ModelInferRequest.InferRequestedOutputTensor.newBuilder()
-                        .setName("output__0")
-                        .build();
-
-        final var request =
-                GrpcService.ModelInferRequest.newBuilder()
-                        .addInputs(inferInputTensor)
-                        .addOutputs(outputTensorSpec)
-                        .setModelName("cel2far")
-                        .build();
+        final var request = ModelInferRequest
+            .newBuilder()
+            /*TODO
+            You should not need hints to configure this request,
+            once you implemented the one in
+            ImageClassification
+            */
+            .build();
 
         final var response = serviceBlockingStub.modelInfer(request);
 
