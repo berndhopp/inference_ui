@@ -1,4 +1,4 @@
-package de.bhopp.ml.ui.cancer;
+package de.bhopp.ml.ui.image;
 
 import com.vaadin.flow.component.upload.Upload;
 import com.vaadin.flow.spring.annotation.UIScope;
