@@ -12,15 +12,17 @@ import com.vaadin.flow.router.Layout;
 import com.vaadin.flow.server.menu.MenuConfiguration;
 import com.vaadin.flow.server.menu.MenuEntry;
 
+import de.bhopp.ml.ui.tritonStatus.TritonStatusInfo;
+
 import static com.vaadin.flow.theme.lumo.LumoUtility.*;
 
 @Layout
 @SuppressWarnings("unused")
 public final class MainLayout extends AppLayout {
 
-    MainLayout() {
+    MainLayout(TritonStatusInfo tritonStatusInfo) {
         setPrimarySection(Section.DRAWER);
-        addToDrawer(createHeader(), new Scroller(createSideNav()));
+        addToDrawer(createHeader(), new Scroller(createSideNav()), tritonStatusInfo);
     }
 
     private Div createHeader() {

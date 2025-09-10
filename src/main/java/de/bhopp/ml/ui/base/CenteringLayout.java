@@ -3,8 +3,8 @@ package de.bhopp.ml.ui.base;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.orderedlayout.FlexLayout;
 
-public abstract class AbstractMainLayout extends FlexLayout {
-    protected AbstractMainLayout(Component... components) {
+public abstract class CenteringLayout extends FlexLayout {
+    protected CenteringLayout(Component... components) {
         setSizeFull();
         setFlexDirection(FlexDirection.ROW);
         getStyle().set("gap", "var(--lumo-space-m)");

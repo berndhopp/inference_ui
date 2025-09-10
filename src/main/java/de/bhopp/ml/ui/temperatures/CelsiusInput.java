@@ -13,7 +13,7 @@ public class CelsiusInput extends NumberField {
     public CelsiusInput(TemperatureConverter temperatureConverter, FahrenheitOutput fahrenheitOutput) {
         setLabel("Celsius");
         addValueChangeListener(e -> {
-            final var fahrenheit = temperatureConverter.convertToFahrenheit(e.getValue());
+            final var fahrenheit = temperatureConverter.convertToFahrenheit(e.getValue().floatValue());
 
             fahrenheitOutput.setFahrenheit(fahrenheit);
         });

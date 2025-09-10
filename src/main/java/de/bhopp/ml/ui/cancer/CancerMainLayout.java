@@ -1,12 +1,12 @@
 package de.bhopp.ml.ui.cancer;
 
 import com.vaadin.flow.spring.annotation.UIScope;
-import de.bhopp.ml.ui.base.AbstractMainLayout;
+import de.bhopp.ml.ui.base.CenteringLayout;
 import org.springframework.stereotype.Component;
 
 @UIScope
 @Component
-public class CancerMainLayout extends AbstractMainLayout {
+public class CancerMainLayout extends CenteringLayout {
     CancerMainLayout(ImageInput imageInput, CancerProbabilityOutput cancerProbabilityOutput) {
         super(imageInput, cancerProbabilityOutput);
     }
